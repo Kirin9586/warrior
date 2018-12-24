@@ -1,0 +1,14 @@
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\obj\Debug\bai2.csprojResolveAssemblyReference.cache
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\obj\Debug\bai2.MainForm.resources
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\obj\Debug\bai2.csproj.GenerateResource.Cache
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\bin\Debug\bai2.exe
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\bin\Debug\bai2.pdb
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\obj\Debug\bai2.exe
+C:\Users\HCM2\Documents\SharpDevelop Projects\bai2\bai2\obj\Debug\bai2.pdb
+E:\bai2\bai2\bin\Debug\bai2.exe
+E:\bai2\bai2\bin\Debug\bai2.pdb
+E:\bai2\bai2\obj\Debug\bai2.csprojResolveAssemblyReference.cache
+E:\bai2\bai2\obj\Debug\bai2.MainForm.resources
+E:\bai2\bai2\obj\Debug\bai2.csproj.GenerateResource.Cache
+E:\bai2\bai2\obj\Debug\bai2.exe
+E:\bai2\bai2\obj\Debug\bai2.pdb
