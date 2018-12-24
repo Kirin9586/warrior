@@ -152,7 +152,7 @@ namespace bai2
  				bac.Visible = false;
 			}
 			else
-			{
+			{	/*lệnh visible dùng để hiện ẩn textbox*/
 				bac.Visible = true;
  				nganh.Visible = true;
 			}
