@@ -15,6 +15,7 @@ namespace bai2
 	/// </summary>
 	public class Congnhan :CanBo
 	{
+		/*đây là class con sử dụng tính kế thừa*/
 		private string bac;
 		public string ibac
 		{
