@@ -15,6 +15,10 @@ namespace bai2
 	/// </summary>
 	public class CanBo
 	{
+		/*khai báo private để đảm báo tính đóng gói của hướng đối tượng(OOP)
+		và sử dụng set{} get{} trong public để thay đổi được giá trị của kiểu dữ liệu
+		(phần này hiểu sao nói vậy có thể xem trong property)
+		*/
 		private string ten;
 		private int tuoi;
 		private string gioitinh;
