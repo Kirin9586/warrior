@@ -18,18 +18,22 @@ namespace bai2
 	/// Description of MainForm.
 	/// </summary>
 	public partial class MainForm : Form
-	{
-
-		Congnhan congnhan = new Congnhan();
-		List<Congnhan> dscongnhan = new List<Congnhan>();
- 		BindingList<Congnhan> bindinglist;
- 		Kysu kysu = new Kysu();
+	{	/*
+		đây là cách khai báo lại các class con sau khi sử dụng Tính kế thừa (Inheritance) của class cha 
+		cơ sử dụng databinding,vì list<> k có source để hiển thị trong datagridview
+		nên dùng bindinglist của class con thêm list của class con đã khai báo vào
+		để đưa biến bindinglist vào source
+		*/
+		Congnhan congnhan = new Congnhan();/*khai báo class con*/
+		List<Congnhan> dscongnhan = new List<Congnhan>();/*khai báo list của class con*/
+ 		BindingList<Congnhan> bindinglist;/*khai báo bindinglist để chưa biến list của class con*/
+ 		Kysu kysu = new Kysu(); 
  		List<Kysu> dskysu = new List<Kysu>();
  		BindingList<Kysu> bindinglist2;
  		Nhanvien nhanvien = new Nhanvien();
  		List<Nhanvien> dscnhanvien = new List<Nhanvien>();
  		BindingList<Nhanvien> bindinglist3;
- 		BindingSource source;
+ 		BindingSource source; /*khai báo source để chưa biến bindinglist*/
  		BindingSource source2;
  		BindingSource source3;
 		public MainForm()
@@ -38,8 +42,7 @@ namespace bai2
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
-			bindinglist = new BindingList<Congnhan>(dscongnhan);
+			bindinglist = new BindingList<Congnhan>(dscongnhan);/*phương thức để gán list vào bindinglist*/
  			bindinglist2 = new BindingList<Kysu>(dskysu);
  			bindinglist3 = new BindingList<Nhanvien>(dscnhanvien);
 
@@ -59,7 +62,7 @@ namespace bai2
 		
 		void RbnamCheckedChanged(object sender, EventArgs e)
 		{
-			if(rbnam.Checked == true)
+			if(rbnam.Checked == true)/*điều kiện radiobutton để in ra giới tính*/
 			{
 				nhanvien.igioitinh = rbnam.Text;
 				congnhan.igioitinh = rbnam.Text;
@@ -69,7 +72,7 @@ namespace bai2
 		
 		void RbnuCheckedChanged(object sender, EventArgs e)
 		{
-			if(rbnu.Checked == true)
+			if(rbnu.Checked == true)/*vì có 3 class nên phải gọi cả 3 class*/
 			{
 				nhanvien.igioitinh = rbnu.Text;
 				congnhan.igioitinh = rbnu.Text;
@@ -78,19 +81,23 @@ namespace bai2
 		}
 		void DulieuClick(object sender, EventArgs e)
 		{
-			if(rbnhanvien.Checked == true)
+			if(rbnhanvien.Checked == true)/*điều kiện để source của class*/
 			{
 				if(tenho.Text.Length > 20 || namsinh.Text.Length !=4 || diachi.Text.Length >30 || tenho.Text =="" || namsinh.Text =="")
 				{
+				/*đây là điều kiện chống việc nhập quá kí tự và việc không nhâp dữ liệu nào 
+				mà vẫn bấm add dữ liệu
+				*/
 					cleardata();
 				}
 				else
 				{
+				/*cách add những thông tin của class con sau khi sử dụng tính kế thừa*/
 				nhanvien.icongviec = congviec.Text;
 				nhanvien.iten = tenho.Text;
 				nhanvien.ituoi = int.Parse(namsinh.Text);
 				nhanvien.idiachi = diachi.Text;
-				source3.Add(nhanvien);
+				source3.Add(nhanvien);/*đây là cách add source của class*/
 				cleardata();
 				show.Refresh();
 				}
@@ -135,6 +142,9 @@ namespace bai2
 		{
 			if(rbnhanvien.Checked == true)
 			{
+				/*đây là điều kiện thầy ra trong đề bài của thầy và dùng để hiển thị
+				show.DataSource = source3
+				*/
 				bindinglist3 = new BindingList<Nhanvien>(dscnhanvien);
  				source3 = new BindingSource(bindinglist3 ,null);
  				show.DataSource = source3;
@@ -183,11 +193,15 @@ namespace bai2
 		}
 		void ThoatClick(object sender, EventArgs e)
 		{
-			this.Dispose();
+			this.Dispose(); /*lệnh thoát*/
 		}
 		
 		void TimClick(object sender, EventArgs e)
 		{
+			/*sử dụng foreach để sử lí danh sách của tên họ vì lúc đầu chúng ta
+			không biết được số lượng kết thúc nên dùng foreach để chứa
+			cá biến tạm trong danh sách ta chèn vào
+			*/
 			foreach(var item in dscongnhan)
 			{
 				if(item.iten == timkiem.Text)
